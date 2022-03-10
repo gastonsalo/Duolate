@@ -38,10 +38,9 @@ a{
 }
 
 
-main{
+.contenedorGeneral{
     display: flex;
     flex-direction: column;
-    height: 90vh;
     align-items: center;
 }
 
@@ -57,3 +56,16 @@ footer{
 .logoCarrito{
 padding-right: 1rem;
 }
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
+    
+}
+.tarjetaProducto{
+    height: 10rem;
+    width: 20rem;
+    border: 2px solid black
+}
+

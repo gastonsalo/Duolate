@@ -6,7 +6,7 @@ const App = () =>{
     return (
         <>
             <Header/>
-            <Main nombre="Gaston" edad={35}/>
+            <Main/>
             <Footer/>
 
         </>
