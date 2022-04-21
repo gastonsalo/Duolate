@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 
-const Categorias = ({info}) => {
+const Categorias = () => {
   return (
     <div className='navBarCategorias row gap-2 '>
         <Link to="/productos/frutas" className='btnCategorias'>Pulpas y Frutas</Link>

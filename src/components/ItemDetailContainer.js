@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
-import { db } from "./firebase"
-import { collection, getDoc, doc, query, where, getDocs } from "firebase/firestore"
-
+import { useEffect, useState } from "react"
+import  ItemDetail  from "./ItemDetail"
+import { useParams } from "react-router-dom"
+import { db } from "./firebase" 
+import { collection, doc, getDoc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
-  const [producto, setProducto] = useState({});
-  const [cargado, setCargado] = useState(false);
+  const [producto, setProduct] = useState({})
+
   const { idProducto } = useParams()
 
-  
-
   useEffect(() => {
-
-    const productosCollection = collection(db, "productos")
-    const filtro = query(productosCollection, where("id", "==", idProducto))
-    const pedido = getDocs(filtro)
+    const productsCollection = collection(db, "productos")
+    const pedido = getDoc(doc(productsCollection, idProducto))
 
     pedido
-      .then(res => setProducto(res.docs[0].data()))
-      .catch(() => console.log("Error al cargar los productos"))
-      .finally(() => setCargado(true))
+    .then(res => setProduct({ ...res.data(), id: res.id }))
+
+      .catch((error) => {
+        console.log(error)
+      })
+
 
   }, [idProducto])
 
@@ -31,7 +29,7 @@ const ItemDetailContainer = () => {
         return (
           <div> 
                 <div>
-                {cargado ? <ItemDetail producto={producto}/> : <div className="mensajeDeCarga">Cargando detalle de un producto...</div>}
+                <ItemDetail key={producto.id} producto={producto}/>
                 </div>
           </div>
         )  

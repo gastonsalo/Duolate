@@ -1,35 +1,41 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState} from 'react'
 
+const inicial = 0
+const stock = 10
+const ItemCount = ({onAdd}) => {
 
-const ItemCount = (props) => {
-
-    let [estado, setEstado] = useState(props.initial)
+    let [estado, setEstado] = useState(inicial)
 
     const sumarItem = () => {
-        if (estado < props.stock) {
+        if (estado < stock) {
             setEstado(estado + 1)
         }
     }
 
     const restarItem = () => {
-        if ((estado <= props.stock) && (estado > 0)) {
+        if ((estado <= stock) && (estado > 0)) {
             setEstado(estado - 1)
         }
     }
 
-    const agregarAlCarrito = () =>{
-        alert("Has agregado "+estado+" productos al carrito")
-    }
-
     return (
-        < div>
-            <p>Cantidad de Items: {estado}</p>
-            <button onClick={sumarItem}>+</button>
-            <button onClick={restarItem}>-</button>
-            <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+        <div>
+            <div className='agregarCard mt-3'>
+                    <button onClick={sumarItem} className='sumarRestar'>+</button>
+                    
+                    <p className=' p-0 m-0'>{estado}</p>
+                    
+                    <button onClick={restarItem} className='sumarRestar'>-</button>
+            </div>
+            <div className=' pb-2 mt-2'>
+                <button className="botonAgregar text-center  btn" onClick={()=>onAdd(estado)} > Agregar al carrito</button>
+            </div>
         </div>
-    )
+            )
 }
 
-export default ItemCount
+            export default ItemCount
+
+
+

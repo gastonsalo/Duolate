@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
 * {
     padding: 0;
     margin: 0;
@@ -17,7 +21,7 @@ a {
 
 .logo{
     margin: 0%;
-    width: 20%;
+    width: 80px;
 }
 
 #root {
@@ -27,18 +31,69 @@ a {
 
 .navbar{
     background-color: #603311;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    justify-content: space-between;
+    border-radius: 3px;
 }
+.linksCaja{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
 .links {
-    color: white;
-    text-decoration: none;
-}
-.dropdown-item{
-    color: #603311;
-}
+    background-image: linear-gradient(
+      to right,
+      #D4C098,
+      #D4C098 50%,
+      white 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  .links:before {
+    content: '';
+    background: #D4C098;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .links:hover {
+   background-position: 0;
+  }
+  
+  .links:hover::before {
+    width:100%;
+  }
+
+
+
+
 
 main {
     flex-grow: 1;
     padding: 1rem;
+    font-family: 'Lato', sans-serif;
 }
 
 footer {
@@ -46,17 +101,24 @@ footer {
     text-align: center;
     font-size: 0.8rem;
     color: white;
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
 }
 
 .card{
     width: 15rem;
     padding: 0;
     transition: 0.4s;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 .imagenes{
     width: 180px;
     height: 200px;
+    transform: 0.2s;
+
     
 }
 
@@ -71,22 +133,138 @@ footer {
     color: white;
 }
 
+.botonAgregar:hover{
+    color: #D4C098;
+    
+}
+
 .imgRedes{
     width: 1.5rem;
 }
 
-.btnCategorias{
-    background-color: white;
-    color: #603311;
-    border: #603311 solid 1px;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transform: 0.2s;
-    text-decoration: none;
+
+
+.btnCategorias {
+    background-image: linear-gradient(
+      to right,
+      #D4C098,
+      #D4C098 50%,
+      #603311 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  .btnCategorias:before {
+    content: '';
+    background: #D4C098;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btnCategorias:hover {
+   background-position: 0;
+  }
+  
+  .btnCategorias:hover::before {
+    width:100%;
+  }
+
+
+
+.contenedorImg{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+
+
 }
 
-.btnCategorias:hover{
-    transform: scale(1.1);
+.sumarRestar{
+    height: 2rem;
+    width: 2rem;
+    color: white;
+    background-color: #603311;
+    border-radius: 4px;
+    margin: 0px 8px;
+}
+
+.sumarRestar:hover{
+    color: #D4C098;
+}
+
+.imgDetalle{
+    width: 200px;
+    height: 220px;
+}
+
+
+.agregarCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+Link{
+    text-decoration: none;
+    color: white;
+    padding: 0px;
+}
+.material-icons{
+    color: white;
+}
+
+.cantidadCarrito{
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    right: 66px;
+    background-color: #D4C098;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #603311;
+    font-family: 'Lato', sans-serif;
+
+    }
+
+.botonBorrar{
+    background-color: #603311;
+    color: white;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 15px;
+    height: 20px;
+    align-items:  center;
+}
+
+.carritoDetalle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.suma{
+    right: 100px;
 }

@@ -8,8 +8,8 @@ import { collection, getDocs , query , where } from "firebase/firestore"
 
 const ItemListContainer = () => {
 
-    const [cargado, setCargado] = useState(true);
-    const [info, setInfo] = useState([])
+
+    const [productos, setProductos] = useState([])
     const { categoria } = useParams()
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const ItemListContainer = () => {
             const pedido = getDocs(productosCollection)
     
             pedido
-                .then(res => setInfo(res.docs.map(doc => doc.data())))
+            .then(res => setProductos(res.docs.map(doc => ({ id: doc.id, ...doc.data() }))))
                 .catch(() => console.log("Error al cargar los productos"))
 
         }else{
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
             const pedido = getDocs(filtro)
 
             pedido
-                .then(res => setInfo(res.docs.map(doc => doc.data())))
+            .then(res => setProductos(res.docs.map(doc => ({ id: doc.id, ...doc.data() }))))
                 .catch(() => console.log("Error al cargar los productos"))
 
         }
@@ -43,10 +43,10 @@ const ItemListContainer = () => {
         return (
           <div className='container-fluid row'>
               <div className='col-3'>
-              {cargado ? <Categorias info={info}/> : <div ></div>}
+              <Categorias/>
               </div>
               <div className='contenedorItemList col-9'>
-              {cargado ? <ItemList info={info}/> : <div className="mensajeDeCarga">Estamos cargando todos los productos...</div>}
+              <ItemList  productos={productos}/> 
               </div>
           </div>
         )  

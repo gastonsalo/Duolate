@@ -1,21 +1,30 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
+import ItemCount from './ItemCount'
+import { useContext } from 'react'
+import { contexto } from '../context/CartContext'
 
 
-function Item({ info }) {
+
+
+function Item({ producto }) { 
+
+  const  {agregarAlCarrito}  = useContext(contexto)
+  
+  const onAdd = (qnt) => {
+    agregarAlCarrito(producto, qnt)
+  }
+
   return (
-    <div className="card shadow p-3 mb-5">
-      <Link to={`/producto/${info.id}`}><img className='imagenes p-2' src={info.image} /></Link>
+    <div className="card shadow p-3 mb-5 text-center">
+      <Link to={`/producto/${producto.id}`}><img className='imagenes p-2' src={producto.image} /></Link>
       <div className="card-body row">
-        <p className="card-title">{info.nombre}</p>
+        <p className="card-title">{producto.nombre}</p>
       </div>
-      <div className='text-end pe-4 pb-2'>
-      <h4 className="card-text text-end mt-3">${info.precio}</h4>
+      <div className=' pe-4 pb-2'>
+      <h4 className="card-text text-start mt-2 mb-3">${producto.precio}</h4>
       </div>
-      <div className='text-end pe-4 pb-2'>
-        <p className="botonAgregar btn text-end"> Agregar al carrito</p>
-      </div>
-      
+      <ItemCount onAdd={onAdd} />
     </div>
   )
 }
