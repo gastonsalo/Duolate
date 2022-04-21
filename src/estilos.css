@@ -251,20 +251,64 @@ Link{
     font-family: 'Lato', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
-    width: 15px;
-    height: 20px;
     align-items:  center;
+    width: 40px;
 }
 
 .carritoDetalle{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
+}
+
+.imgDetalleCarrito{
+    width: 100px;
+    height: 110px;
+}
+
+.cartelCompra{
+    background-color: #603311;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.cartelCompraRealizada{
+    background-color: white;
+    color: #603311;
+    border-color: #603311 solid 2px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
 }
 
 .suma{
-    right: 100px;
+    background-color: #603311;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    width: 70%;
 }
+
+.botonComprar{
+    background-color: #603311;
+    color: white;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    align-items:  center;
+
+
+  }

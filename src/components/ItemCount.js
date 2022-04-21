@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState} from 'react'
 
-const inicial = 0
+const inicial = 1
 const stock = 10
 const ItemCount = ({onAdd}) => {
 

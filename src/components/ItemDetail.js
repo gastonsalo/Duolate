@@ -7,7 +7,7 @@ const ItemDetail = ({ producto }) => {
 
 
 
-  const  {carrito, agregarAlCarrito, quitarProducto}  = useContext(contexto)
+  const  {agregarAlCarrito}  = useContext(contexto)
 
   const onAdd = (qnt) => {
     agregarAlCarrito(producto, qnt)
@@ -23,7 +23,6 @@ const ItemDetail = ({ producto }) => {
   <div className='text-center col-4 me-2'>
   <img src={producto.image} className="card-img-top imgDetalle"/>
   <ItemCount onAdd={onAdd} />
-  <button onClick={()=>quitarProducto(producto.id)}>borrar </button>
   </div>
 
   <div className="card-body col-8">
