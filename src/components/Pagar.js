@@ -20,11 +20,11 @@ const Pagar = ({cargaDeDatos}) => {
         <label className='mail my-2'>Reingresa tu mail</label>
       </div>
       <div className=' row col-4 '>
-        <input value="as" className='nombre' type='text' pattern='[A-Za-z]+' maxLength='20' placeholder='nombre del comprador' required/>
-        <input value="as" className='apellido' type='text' pattern='[A-Za-z]+' maxLength='25' placeholder='apellido del comprador' required/>
-        <input value="3512345678" className='telefono' type='text' pattern='[0-9]{10}' maxLength='10' placeholder='ej: 3512345678' required/>
-        <input value="as@gmail.com" className='mail' type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='mail@duolate.com' required/>
-        <input value="as@gmail.com" className='mail' type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='mail@coderhouse.com' required/>
+        <input  className='nombre' type='text' pattern='[A-Za-z]+' maxLength='20' placeholder='nombre del comprador' required/>
+        <input  className='apellido' type='text' pattern='[A-Za-z]+' maxLength='25' placeholder='apellido del comprador' required/>
+        <input  className='telefono' type='text' pattern='[0-9]{10}' maxLength='10' placeholder='ej: 3512345678' required/>
+        <input  className='mail' type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='mail@duolate.com' required/>
+        <input  className='mail' type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='mail@coderhouse.com' required/>
       </div>
       <div className='col-2'></div>
 		<div className='col-6 row my-3 mx-auto'>
